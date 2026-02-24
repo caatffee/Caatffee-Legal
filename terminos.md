@@ -1,4 +1,7 @@
 Términos de Servicio de Caatffee
+
+Última actualización: 24 de febrero de 2026
+
 1. Uso del Bot:
 Al usar Caatffee, aceptas no usar el bot para spam o actividades que rompan las reglas de Discord.
 
