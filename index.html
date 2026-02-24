@@ -3,134 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caatffee Bot | Official Site</title>
+    <meta name="description" content="Caatffee Bot - Gestión profesional y automatización avanzada para servidores de Discord.">
+    <title>Caatffee Bot | Official Enterprise Site</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --p-cafe: #6f4e37; --p-crema: #d2b48c; --p-bg: #050505; }
-        body { background-color: var(--p-bg); scroll-behavior: smooth; overflow-x: hidden; }
-        .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .hero-title { background: linear-gradient(to right, #ffffff, #d2b48c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-service { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s ease; }
-        .card-service:hover { border-color: var(--p-cafe); transform: translateY(-5px); background: rgba(111, 78, 55, 0.05); }
-        .btn-main { background: var(--p-cafe); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(111, 78, 55, 0.3); }
-        .btn-main:hover { background: #8b6245; transform: scale(1.02); box-shadow: 0 6px 20px rgba(111, 78, 55, 0.4); }
-        #sidebar { transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
-        .input-field { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); outline: none; transition: 0.3s; }
-        .input-field:focus { border-color: var(--p-cafe); background: rgba(255, 255, 255, 0.05); }
+        body { background-color: var(--p-bg); color: #ffffff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass-header { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: fixed; top: 0; w-full; z-index: 1000; }
+        .hero-gradient { background: radial-gradient(circle at 50% -20%, rgba(111, 78, 55, 0.15) 0%, transparent 80%); }
+        .btn-primary { background: var(--p-cafe); color: white; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .btn-primary:hover { background: #8b6245; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(111, 78, 55, 0.4); }
+        .feature-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; transition: 0.3s; }
+        .feature-card:hover { background: rgba(255, 255, 255, 0.04); border-color: var(--p-cafe); }
+        #nav-menu { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .input-auth { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .input-auth:focus { border-color: var(--p-cafe); background: rgba(255, 255, 255, 0.06); outline: none; }
     </style>
 </head>
-<body class="text-gray-100 font-sans">
+<body class="hero-gradient">
 
-    <nav class="fixed top-0 w-full z-50 glass-nav px-8 py-4">
+    <nav class="glass-header w-full px-8 py-5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="https://i.postimg.cc/Z52Gnst1/file-00000000020c720eac74ed17c583766c-(3)-(1)-(1)-(1).png" class="w-10 h-10 rounded-full border border-white/10" alt="Logo">
-                <span class="text-xl font-bold tracking-widest uppercase">Caatffee</span>
+            <div class="flex items-center gap-4">
+                <img src="https://i.postimg.cc/Z52Gnst1/file-00000000020c720eac74ed17c583766c-(3)-(1)-(1)-(1).png" class="w-12 h-12 rounded-full border border-white/20" alt="Caatffee Logo">
+                <span class="text-2xl font-black tracking-tighter uppercase">Caatffee</span>
             </div>
-            <div class="flex items-center gap-8">
-                <div class="hidden md:flex gap-4 text-lg">
-                    <span>🇲🇽</span><span class="opacity-40">🇺🇸</span><span class="opacity-40">🇧🇷</span>
+            <div class="flex items-center gap-10">
+                <div class="hidden lg:flex items-center gap-6 text-sm font-bold tracking-widest text-gray-400">
+                    <a href="#about" class="hover:text-white transition">SYSTEM</a>
+                    <a href="#features" class="hover:text-white transition">FEATURES</a>
+                    <a href="#contact" class="hover:text-white transition">FEEDBACK</a>
                 </div>
-                <button onclick="toggleSidebar()" class="text-2xl hover:text-[#d2b48c] transition-colors">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button onclick="toggleNav()" class="text-2xl text-[#d2b48c]"><i class="fas fa-align-right"></i></button>
             </div>
         </div>
     </nav>
 
-    <div id="sidebar" class="fixed top-0 right-0 h-full w-80 bg-[#0a0a0a] z-[60] p-12 translate-x-full border-l border-white/5 shadow-2xl">
-        <button onclick="toggleSidebar()" class="text-4xl absolute top-6 right-6 text-gray-500 hover:text-white">&times;</button>
-        <div class="flex flex-col gap-8 mt-16">
-            <a href="#inicio" onclick="toggleSidebar()" class="text-xl font-semibold hover:text-[#d2b48c]">Inicio</a>
-            <a href="#nosotros" onclick="toggleSidebar()" class="text-xl font-semibold hover:text-[#d2b48c]">¿Qué es Caatffee?</a>
-            <a href="#sugerencias" onclick="toggleSidebar()" class="text-xl font-semibold hover:text-[#d2b48c]">Sugerencias</a>
+    <div id="nav-menu" class="fixed top-0 right-0 h-full w-80 bg-[#080808] z-[1100] p-16 translate-x-full border-l border-white/5">
+        <button onclick="toggleNav()" class="text-5xl absolute top-8 right-8 text-gray-600 hover:text-white">&times;</button>
+        <div class="flex flex-col gap-10 mt-20">
+            <a href="#about" onclick="toggleNav()" class="text-2xl font-bold hover:text-[#d2b48c]">Misión</a>
+            <a href="#features" onclick="toggleNav()" class="text-2xl font-bold hover:text-[#d2b48c]">Funciones</a>
+            <a href="https://www.patreon.com/15613390/join" class="text-2xl font-bold text-[#ffd700]">Patreon</a>
             <hr class="border-white/5">
-            <a href="https://raw.githubusercontent.com/caatffee/Caatffee-Legal/refs/heads/main/terminos.md" class="text-sm text-gray-500 uppercase tracking-widest">Términos y Condiciones</a>
+            <a href="https://raw.githubusercontent.com/caatffee/Caatffee-Legal/refs/heads/main/terminos.md" class="text-xs text-gray-600 uppercase tracking-widest">Legal & Privacidad</a>
         </div>
     </div>
 
-    <section id="inicio" class="min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
-        <img src="https://i.postimg.cc/Z52Gnst1/file-00000000020c720eac74ed17c583766c-(3)-(1)-(1)-(1).png" class="w-48 h-48 rounded-full mb-10 animate__animated animate__fadeIn border-4 border-white/5 shadow-2xl">
-        <h1 class="text-6xl md:text-8xl font-black mb-6 hero-title animate__animated animate__fadeInUp">CAATFFEE</h1>
-        <p class="max-w-2xl text-gray-400 text-xl mb-12 animate__animated animate__fadeInUp animate__delay-1s">La solución integral de automatización y gestión para comunidades exclusivas de Discord.</p>
-        <div class="flex flex-wrap gap-6 animate__animated animate__fadeInUp animate__delay-1s">
-            <a href="https://discord.com/oauth2/authorize?client_id=1475842620063485993&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-main px-12 py-4 rounded-xl font-bold text-lg">Invitar al Servidor</a>
-            <a href="https://www.patreon.com/15613390/join" class="px-12 py-4 rounded-xl font-bold text-lg border border-white/10 hover:bg-white/5 transition">Membresía Patreon</a>
+    <header class="min-h-screen flex flex-col items-center justify-center px-6 pt-24">
+        <div class="relative mb-12">
+            <div class="absolute inset-0 bg-[#6f4e37] blur-[100px] opacity-20"></div>
+            <img src="https://i.postimg.cc/Z52Gnst1/file-00000000020c720eac74ed17c583766c-(3)-(1)-(1)-(1).png" class="w-56 h-56 rounded-full relative z-10 border-4 border-white/10 shadow-2xl animate__animated animate__fadeIn">
         </div>
-    </section>
+        <h1 class="text-7xl md:text-9xl font-black text-center mb-6 tracking-tight animate__animated animate__fadeInUp">CAATFFEE</h1>
+        <p class="max-w-3xl text-center text-gray-400 text-xl md:text-2xl font-light mb-12 leading-relaxed animate__animated animate__fadeInUp animate__delay-1s">
+            Sincronización de alto rendimiento para infraestructuras de Discord. Seguridad, economía y estabilidad en un solo ecosistema.
+        </p>
+        <div class="flex flex-wrap gap-6 justify-center animate__animated animate__fadeInUp animate__delay-1s">
+            <a href="https://discord.com/oauth2/authorize?client_id=1275842620063485993&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-primary px-14 py-5 rounded-2xl font-black text-lg uppercase tracking-wider">Autorizar Sistema</a>
+            <a href="https://discord.gg/7dE5hZT77g" class="bg-white/5 border border-white/10 px-14 py-5 rounded-2xl font-black text-lg hover:bg-white/10 transition uppercase tracking-wider">Central de Soporte</a>
+        </div>
+    </header>
 
-    <section id="nosotros" class="py-32 px-6 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-8 text-[#d2b48c]">Excelencia en Moderación</h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">Caatffee ha sido desarrollado bajo estándares de alta eficiencia, proporcionando herramientas de seguridad, economía personalizada y sistemas de fidelización que transforman servidores convencionales en comunidades de élite.</p>
-                <ul class="space-y-4">
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-[#6f4e37]"></i> Infraestructura de baja latencia</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-[#6f4e37]"></i> Protección avanzada Anti-Spam</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-[#6f4e37]"></i> Integración nativa con comandos Slash</li>
-                </ul>
+    <section id="features" class="py-32 px-8 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-black mb-20 text-center uppercase tracking-widest">Protocolos de Operación</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card p-10">
+                <i class="fas fa-fingerprint text-4xl mb-6 text-[#6f4e37]"></i>
+                <h3 class="text-xl font-bold mb-4">Identidad Segura</h3>
+                <p class="text-gray-500 leading-relaxed">Sistemas de verificación y moderación automática para mantener la integridad de su servidor.</p>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="card-service p-8 rounded-3xl text-center">
-                    <i class="fas fa-shield-alt text-3xl mb-4 text-[#6f4e37]"></i>
-                    <p class="font-bold">Seguridad</p>
-                </div>
-                <div class="card-service p-8 rounded-3xl text-center">
-                    <i class="fas fa-coins text-3xl mb-4 text-[#6f4e37]"></i>
-                    <p class="font-bold">Economía</p>
-                </div>
-                <div class="card-service p-8 rounded-3xl text-center">
-                    <i class="fas fa-bolt text-3xl mb-4 text-[#6f4e37]"></i>
-                    <p class="font-bold">Velocidad</p>
-                </div>
-                <div class="card-service p-8 rounded-3xl text-center">
-                    <i class="fas fa-star text-3xl mb-4 text-[#6f4e37]"></i>
-                    <p class="font-bold">Premium</p>
-                </div>
+            <div class="feature-card p-10">
+                <i class="fas fa-chart-line text-4xl mb-6 text-[#6f4e37]"></i>
+                <h3 class="text-xl font-bold mb-4">Economía Global</h3>
+                <p class="text-gray-500 leading-relaxed">Módulos financieros avanzados con balanceo de carga para sistemas de gran escala.</p>
+            </div>
+            <div class="feature-card p-10">
+                <i class="fas fa-microchip text-4xl mb-6 text-[#6f4e37]"></i>
+                <h3 class="text-xl font-bold mb-4">Núcleo Eficiente</h3>
+                <p class="text-gray-500 leading-relaxed">Optimización de latencia para respuestas instantáneas bajo cualquier carga de tráfico.</p>
             </div>
         </div>
     </section>
 
-    <section id="sugerencias" class="py-32 px-6 bg-[#080808]">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center">Buzón de Sugerencias</h2>
-            <p class="text-center text-gray-500 mb-12">Su opinión es fundamental para el desarrollo continuo de Caatffee.</p>
-            
-            <form action="https://formspree.io/f/mqaebrjr" method="POST" class="space-y-6">
+    <section id="contact" class="py-32 px-8 bg-[#030303]">
+        <div class="max-w-4xl mx-auto glass-heavy p-12 md:p-20 rounded-[48px] border border-white/5">
+            <h2 class="text-4xl font-black mb-4 text-center">Buzón de Operaciones</h2>
+            <p class="text-center text-gray-500 mb-16 uppercase tracking-widest text-sm font-bold">Registro de sugerencias y reportes técnicos</p>
+            <form action="https://formspree.io/f/mqaebrjr" method="POST" class="grid gap-8">
                 <input type="hidden" name="_replyto" value="caatffee@gmail.com">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="flex flex-col gap-2">
-                        <label class="text-sm font-bold text-gray-400">Usuario de Discord</label>
-                        <input type="text" name="discord_user" required class="input-field p-4 rounded-xl" placeholder="Nombre#0000">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col gap-3">
+                        <label class="text-xs font-black text-[#6f4e37] uppercase tracking-widest">Identificador Discord</label>
+                        <input type="text" name="user_id" required class="input-auth p-5 rounded-2xl" placeholder="User#0000">
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <label class="text-sm font-bold text-gray-400">Categoría</label>
-                        <select name="category" class="input-field p-4 rounded-xl">
-                            <option>Mejora de Comando</option>
-                            <option>Reporte de Error</option>
-                            <option>Sugerencia General</option>
+                    <div class="flex flex-col gap-3">
+                        <label class="text-xs font-black text-[#6f4e37] uppercase tracking-widest">Prioridad</label>
+                        <select name="priority" class="input-auth p-5 rounded-2xl">
+                            <option>Sugerencia Estándar</option>
+                            <option>Reporte Crítico</option>
+                            <option>Consulta de Membresía</option>
                         </select>
                     </div>
                 </div>
-                <div class="flex flex-col gap-2">
-                    <label class="text-sm font-bold text-gray-400">Mensaje</label>
-                    <textarea name="message" rows="5" required class="input-field p-4 rounded-xl" placeholder="Describa su sugerencia detalladamente..."></textarea>
+                <div class="flex flex-col gap-3">
+                    <label class="text-xs font-black text-[#6f4e37] uppercase tracking-widest">Descripción del Requerimiento</label>
+                    <textarea name="report_body" rows="6" required class="input-auth p-5 rounded-2xl" placeholder="Detalle su solicitud aquí..."></textarea>
                 </div>
-                <button type="submit" class="w-full btn-main py-5 rounded-xl font-bold text-lg tracking-widest uppercase">Enviar Comunicación</button>
+                <button type="submit" class="btn-primary py-6 rounded-2xl font-black text-xl uppercase tracking-[0.2em] shadow-2xl">Transmitir Datos</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-gray-600 text-sm font-medium tracking-widest uppercase">© 2026 Caatffee Systems. All Rights Reserved.</p>
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="flex justify-center gap-8 mb-10 text-xl text-gray-600">
+            <a href="#" class="hover:text-white transition"><i class="fab fa-discord"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fab fa-patreon"></i></a>
+        </div>
+        <p class="text-xs text-gray-700 font-black tracking-[0.4em] uppercase">© 2026 Caatffee Enterprise Systems</p>
     </footer>
 
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('translate-x-full');
+        function toggleNav() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('translate-x-full');
         }
     </script>
 </body>
