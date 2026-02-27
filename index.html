@@ -10,7 +10,6 @@
 :root{
 --accent:#ffb6c1;
 --accent-strong:#ff8fab;
---bg-dark:#0f0c0c;
 --glass:rgba(30,20,20,0.7);
 --text:#ffffff;
 --muted:#d6d2d2;
@@ -25,16 +24,20 @@ font-family:'Poppins',sans-serif;
 
 body{
 color:var(--text);
-background:linear-gradient(-45deg,#140f0f,#1b1414,#241919,#140f0f);
-background-size:400% 400%;
-animation:bgMove 15s ease infinite;
+background:
+linear-gradient(rgba(15,12,12,0.55), rgba(15,12,12,0.55)),
+url('https://i.postimg.cc/63VC2jmY/Fondo_Plantilla.png');
+background-size:120% 120%;
+background-position:0% 0%;
+background-repeat:no-repeat;
+animation:bgMoveImage 25s linear infinite;
 overflow-x:hidden;
 }
 
-@keyframes bgMove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+@keyframes bgMoveImage{
+0%{background-position:0% 0%}
+50%{background-position:100% 100%}
+100%{background-position:0% 0%}
 }
 
 header{
@@ -48,7 +51,6 @@ align-items:center;
 padding:18px 50px;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(25px);
-border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 header img{
@@ -62,37 +64,21 @@ margin:0 18px;
 color:var(--text);
 text-decoration:none;
 font-weight:500;
-cursor:pointer;
-position:relative;
 transition:0.3s;
 }
 
-nav a:hover{
-color:var(--accent);
-}
+nav a:hover{ color:var(--accent); }
 
 section{
 display:none;
 padding:140px 30px 100px 30px;
 max-width:1300px;
 margin:auto;
-animation:fade 0.5s ease;
 }
 
-section.active{
-display:block;
-}
+section.active{ display:block; }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(10px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-.hero{
-text-align:center;
-}
-
-/* Banner */
+.hero{text-align:center;}
 
 .hero img{
 width:100%;
@@ -100,19 +86,7 @@ max-width:950px;
 border-radius:25px;
 margin-bottom:40px;
 border:4px solid var(--accent);
-box-shadow:
-0 30px 80px rgba(0,0,0,0.8),
-0 0 25px var(--accent);
-transition:0.3s ease;
 }
-
-.hero img:hover{
-box-shadow:
-0 30px 80px rgba(0,0,0,0.8),
-0 0 40px var(--accent-strong);
-}
-
-/* Badge arriba del título */
 
 .badge{
 display:inline-block;
@@ -124,17 +98,7 @@ font-weight:600;
 color:#ffd6e7;
 background:rgba(255,182,193,0.1);
 border:1px solid rgba(255,182,193,0.4);
-backdrop-filter:blur(10px);
-box-shadow:0 0 15px rgba(255,182,193,0.2);
-transition:0.3s ease;
 }
-
-.badge:hover{
-box-shadow:0 0 25px rgba(255,182,193,0.5);
-transform:scale(1.05);
-}
-
-/* Título */
 
 .hero h1{
 font-size:52px;
@@ -142,27 +106,8 @@ font-weight:800;
 margin-bottom:20px;
 }
 
-.logo span{
-transition:all 0.3s ease;
-}
-
-.caat{
-color:#f6eed9;
-}
-
-.ffee{
-color:#7B3F00;
-}
-
-.logo:hover .caat{
-text-shadow:0 0 10px #ffffff, 0 0 20px #f6eed9;
-}
-
-.logo:hover .ffee{
-text-shadow:0 0 10px #ffdfc2, 0 0 25px #ffb38a;
-}
-
-/* Texto */
+.caat{color:#f6eed9;}
+.ffee{color:#7B3F00;}
 
 .hero p{
 max-width:800px;
@@ -172,9 +117,7 @@ color:var(--muted);
 line-height:1.8;
 }
 
-.buttons{
-margin-top:40px;
-}
+.buttons{margin-top:40px;}
 
 .btn{
 display:inline-block;
@@ -183,89 +126,50 @@ margin:10px;
 border-radius:50px;
 font-weight:700;
 text-decoration:none;
-transition:0.3s;
 background:linear-gradient(45deg,var(--accent),var(--accent-strong));
 color:#000;
-box-shadow:0 10px 30px rgba(255,182,193,0.4);
-}
-
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 0 35px rgba(255,182,193,0.8);
 }
 
 .section-title{
 text-align:center;
 font-size:36px;
-margin-bottom:60px;
+margin-bottom:40px;
 color:var(--accent);
 font-weight:800;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:35px;
-}
-
 .card{
 background:var(--glass);
-padding:35px;
-border-radius:25px;
-backdrop-filter:blur(25px);
-box-shadow:0 20px 50px rgba(0,0,0,0.7);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 40px rgba(255,182,193,0.4);
-}
-
-.card img{
-width:100%;
+padding:30px;
 border-radius:20px;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .card h3{
 color:var(--accent);
-margin-bottom:15px;
-}
-
-.card p{
-font-size:14px;
-color:var(--muted);
 margin-bottom:10px;
 }
 
-.back{
-margin-top:60px;
-text-align:center;
+.card p{
+color:var(--muted);
+font-size:14px;
 }
 
-/* Footer */
+.search-box{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:none;
+margin-bottom:30px;
+font-size:15px;
+}
 
 .footer-inline{
 display:flex;
 justify-content:center;
 align-items:center;
 gap:15px;
-}
-
-.footer-inline img{
-width:18px;
-height:18px;
-filter:invert(1);
-transition:0.25s ease;
-cursor:pointer;
-opacity:0.8;
-}
-
-.footer-inline img:hover{
-transform:scale(1.2);
-opacity:1;
-filter:invert(1) drop-shadow(0 0 8px var(--accent));
+padding:30px;
 }
 </style>
 </head>
@@ -275,11 +179,12 @@ filter:invert(1) drop-shadow(0 0 8px var(--accent));
 <header>
 <img src="https://i.postimg.cc/XJPC1Nxs/PERFIL.jpg">
 <nav>
-<a onclick="show('inicio')">Inicio</a>
-<a onclick="show('Donaciones')">Donaciones</a>
-<a onclick="show('Updates')">Updates</a>
-<a onclick="show('terminos')">Términos</a>
-<a onclick="show('privacidad')">Privacidad</a>
+<a href="#inicio">Inicio</a>
+<a href="#Donaciones">Donaciones</a>
+<a href="#Updates">Updates</a>
+<a href="#terminos">Términos</a>
+<a href="#privacidad">Privacidad</a>
+<a href="#comandos">Comandos</a>
 </nav>
 </header>
 
@@ -287,173 +192,114 @@ filter:invert(1) drop-shadow(0 0 8px var(--accent));
 <section id="inicio" class="active">
 <div class="hero">
 <img src="https://i.postimg.cc/hjrPWWLS/Banner_Oficial.jpg">
-<div class="badge">
-  ✨ El bot de gesstion más adorable para tu servidor
-</div>
-
-<h1 class="logo">
-  <span class="caat">Caat</span><span class="ffee">ffee</span>
-</h1>
+<div class="badge">✨ El bot de gestión más adorable para tu servidor</div>
+<h1><span class="caat">Caat</span><span class="ffee">ffee</span></h1>
 <p>
-Nacimos de la necesidad de simplificar la vida de los dueños de servidores y administradores.
-¿Por qué abrir mil pestañas si puedes controlar todo desde un chat privado?
-Con Caatffee, el poder de tu servidor cabe en la palma de tu mano.🌸
+Nacimos de la necesidad de simplificar la vida de los dueños de servidores.
+Con Caatffee, el poder de tu servidor cabe en la palma de tu mano.
 </p>
-
 <div class="buttons">
-<a class="btn" href="https://discord.com/oauth2/authorize?client_id=1475842620063485993&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank">
-Añadir el Bot
-</a>
-
-<a class="btn" href="https://discord.gg/ESPYGjMqYK" target="_blank">
-Servidor de Soporte
-</a>
+<a class="btn" href="https://discord.com/oauth2/authorize?client_id=1475842620063485993&permissions=8&scope=bot%20applications.commands" target="_blank">Añadir el Bot</a>
+<a class="btn" href="https://discord.gg/ESPYGjMqYK" target="_blank">Servidor de Soporte</a>
 </div>
 </div>
 </section>
 
 <!-- DONACIONES -->
 <section id="Donaciones">
-<h2 class="section-title">☕ Beneficios Premium 👑</h2>
-<div class="grid">
-
+<h2 class="section-title">☕ Donaciones</h2>
 <div class="card">
-<img src="https://i.postimg.cc/vBgkfCh6/Donación_Básica_Banner.jpg">
-<h3>Donación Básica - $3.99</h3>
-<p>🌟 Rol exclusivo (Barista básico + Premium)</p>
-<p>📊 Estadísticas avanzadas básicas (más info de tu servidor)</p>
-<p>🕒 Prioridad ligera en el servidor de soporte</p>
-<p>💬 Canal exclusivo para sugerencias en el servidor de soporte</p>
-<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
-</div>
-
-<div class="card">
-<img src="https://i.postimg.cc/KjdZtntg/Donación_Intermedia_Banner.jpg">
-<h3>Donación Intermedia - $5</h3>
-<p>Incluye todo lo anterior</p>
-<p>🎛 Más opciones de configuración del dashboard</p>
-<p>🌸 Personalizar nombre del panel entre otras cosas</p>
-<p>📂 Plantillas de eventos, canales y categorías exclusivas para tu servidor</p>
-<p>🔔 Logs avanzados</p>
-<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
-</div>
-
-<div class="card">
-<img src="https://i.postimg.cc/2STSKBDv/Donación_Avanzada.jpg">
-<h3>Donación Avanzada - $10</h3>
-<p>Incluye todo lo anterior</p>
-<p>🤖 Comandos solo para  Baristas donadores Avanzados y Premiums</p>
-<p>🎨 Personalización avanzada</p>
-<p>📂 Plantillas premium</p>
-<p>🔔 Logs avanzados</p>
-<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
-</div>
-
-<div class="card">
-<img src="https://i.postimg.cc/Pf6KTSMG/Donación_Barista_Ultra.jpg">
-<h3>Donación Barista Ultra- $15</h3>
-<p>Incluye todo lo anterior</p>
-<p>🏆 Badge de (ULTRA) visible en panel </p>
-<p>🌐 Acceso temprano a nuevas funciones</p>
-<p>🤝 Soporte prioritario real</p>
-<p>🧩 Integraciones exclusivas</p>
-<p>📈 Panel premium extendido (más opciones y funciones)</p>
-<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
-</div>
-
-</div>
-<div class="back">
-<button class="btn" onclick="show('inicio')">Volver al menú principal</button>
+<h3>Apoya el desarrollo</h3>
+<p>Suscripciones activas mediante Patreon.</p>
+<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Ir a Patreon</a>
 </div>
 </section>
 
 <!-- UPDATES -->
 <section id="Updates">
-<h2 class="section-title">🌸 Última Actualización 🌸</h2>
+<h2 class="section-title">🌸 Updates</h2>
 <div class="card">
-<img src="https://i.postimg.cc/3J3W7Dh8/1_Update_Banner.jpg">
-<p><strong>Fecha:</strong> 25/02/2026</p>
-<p>Implementamos y mejoramos comandos de moderación💝.</p>
-<p><strong>Comandos:</strong></p>
-<p>/help /update /ban /purge /kick /timeout /lock /slowmode</p>
-<p>Configuración completa del servidor desde MD.</p>
-</div>
-<div class="back">
-<button class="btn" onclick="show('inicio')">Volver al menú principal</button>
+<p>Última actualización: 25/02/2026</p>
+<p>Mejoras en moderación y sistema premium.</p>
 </div>
 </section>
 
 <!-- TERMINOS -->
 <section id="terminos">
-<h2 class="section-title">Términos de Servicio</h2>
-<p><strong>Última Actualización:</strong> 25/02/2026</p>
-
+<h2 class="section-title">Términos</h2>
 <div class="card">
-    <h2 class="section">1. Uso Aceptable.</h2><p>• El usuario se compromete a utilizar el bot para fines lícitos.</p>
-    <p>• El uso de las comandos administrativos o de moderacion queda restringido al propietario y administradores o moderadores del servidor.</p>
-    <h2 class="section">2. Servicio Premium.</h2>
-    <p>• El estatus Premium se puede adquirir mediante una suscripción en Patreon mas informacion en nuestro <a href="https://discord.gg/ESPYGjMqYK" target="_blank" style="color: pink; text-decoration: none; font-weight: bold;">
-  👉Servidor oficial
-</a>
-<p>• Las suscripciones de Patreon se consideran donaciones para el mantenimiento y mejora del bot y no son reembolsables. <a href="https://www.patreon.com/15613390/join" target="_blank" style="color: pink; text-decoration: none; font-weight: bold;">
-  👉 Ver patreon
-</a>
-<p>• Los beneficios permanecen activos mientras la suscripción de Patreon está activa.<p>
-    <h2 class="section">3. Responsabilidad.</h2>
-    <p>• Caatffee no se hace responsable del mal uso por parte de los usuarios (mensajes ofensivos).<p>
-    <p>• Contamos con filtros preventivos, pero la conducta final es responsabilidad del usuario.<p>
-    <h2 class="section">4. Modificaciones.</h2>
-    <p>• Nos reservamos el derecho de actualizar estos términos para asegurar la integridad de la red Caatffee.<p>
-    <h5 class="section">Al usar Caatffee, usted reconoce haber leído y aceptado estos términos.</h5>
-    </div>
-
-<div class="back">
-<button class="btn" onclick="show('inicio')">Volver al menú principal</button>
+<p>Uso responsable obligatorio.</p>
+<p>Las suscripciones son consideradas donaciones y no son reembolsables.</p>
 </div>
 </section>
 
 <!-- PRIVACIDAD -->
 <section id="privacidad">
-<h2 class="section-title">Política de Privacidad</h2>
+<h2 class="section-title">Privacidad</h2>
 <div class="card">
-<h2 class="section">1. Recopilación de Datos.</h2>
-<p>• Recopilamos el ID de usuario para gestionar permisos y acciones. No compartimos esta información con terceros ni extraños.</p>
-<h2 class="section">2. Almacenamiento.</h2>
-<p>• Al configurar acciones, los datos no se guardan permanentemente, a menos que se trate de eventos cronometrados donde la información se mantiene hasta que se cumpla la fecha.</p>
-<h2 class="section">3. Seguridad.</h2>
-<p>• Toda la configuración se realiza por MD para proteger la privacidad de las acciones administrativas de los servidores.</p>
-<h2 class="section">4. Derechos del Usuario.</h2>
-<p>• Al sacar al bot del servidor, los cambios realizados permanecen, pero el bot ya no podrá realizar nuevas acciones ni guardará ningún tipo de información residual.</p>
-<h2 class="section">5. Transparencia.</h2>
-<p>• Nuestras políticas están diseñadas para que el usuario siempre tenga el control sobre qué información procesa Caatffee considera unirte al <a href="https://discord.gg/ESPYGjMqYK" target="_blank" style="color: pink; text-decoration: none; font-weight: bold;">
-  👉Servidor oficial
-  </a>
+<p>Solo almacenamos datos necesarios para el funcionamiento del bot.</p>
 </div>
-<div class="back">
-<button class="btn" onclick="show('inicio')">Volver al menú principal</button>
+</section>
+
+<!-- COMANDOS -->
+<section id="comandos">
+<h2 class="section-title">☕ Lista de Comandos</h2>
+
+<input type="text" class="search-box" placeholder="Buscar comando..." onkeyup="buscarComando(this.value)">
+
+<div id="listaComandos">
+
+<div class="card">
+<h3>/ban</h3>
+<p>Expulsa permanentemente a un usuario del servidor.</p>
+</div>
+
+<div class="card">
+<h3>/kick</h3>
+<p>Expulsa a un usuario sin prohibir su regreso.</p>
+</div>
+
+<div class="card">
+<h3>/timeout</h3>
+<p>Silencia temporalmente a un usuario.</p>
+</div>
+
+<div class="card">
+<h3>/welcome</h3>
+<p>Configura el mensaje de bienvenida.</p>
+</div>
+
 </div>
 </section>
 
 <footer>
-  <div class="footer-inline">
-    <span>© 2026 Caatffee</span>
-
-    <a href="https://discord.gg/ESPYGjMqYK" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">
-    </a>
-
-    <a href="https://www.patreon.com/15613390/join" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/patreon.svg">
-    </a>
-  </div>
+<div class="footer-inline">
+<span>© 2026 Caatffee</span>
+</div>
 </footer>
 
 <script>
-function show(id){
+function showSectionFromHash(){
+const hash = window.location.hash.substring(1);
+const target = hash || "inicio";
 document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-document.getElementById(id).classList.add("active");
+const section = document.getElementById(target);
+if(section){
+section.classList.add("active");
 window.scrollTo({top:0,behavior:"smooth"});
 }
+}
+
+function buscarComando(valor){
+let filtro = valor.toLowerCase();
+let comandos = document.querySelectorAll("#listaComandos .card");
+comandos.forEach(cmd=>{
+cmd.style.display = cmd.innerText.toLowerCase().includes(filtro) ? "block" : "none";
+});
+}
+
+window.addEventListener("hashchange", showSectionFromHash);
+window.addEventListener("load", showSectionFromHash);
 </script>
 
 </body>
