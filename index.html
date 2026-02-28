@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caatffee ☕</title>
+<title>Caatffee</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -20,6 +20,19 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+}
+
+.update-banner{
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 0 30px rgba(255,182,193,0.35);
+transition:0.4s;
+}
+
+.update-banner:hover{
+transform:scale(1.02);
+box-shadow:0 0 45px rgba(255,182,193,0.6);
 }
 
 body{
@@ -80,6 +93,15 @@ section.active{ display:block; }
 
 .hero{text-align:center;}
 
+.hero{
+animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
 .hero img{
 width:100%;
 max-width:950px;
@@ -106,6 +128,28 @@ font-weight:800;
 margin-bottom:20px;
 }
 
+.hero h1{
+animation:glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+0%{
+transform:scale(1);
+text-shadow:0 0 0px rgba(255,182,193,0.0);
+}
+50%{
+transform:scale(1.08);
+text-shadow:
+0 0 10px #ffb6c1,
+0 0 20px #ff8fab,
+0 0 35px #ff8fab;
+}
+100%{
+transform:scale(1);
+text-shadow:0 0 0px rgba(255,182,193,0.0);
+}
+}
+
 .caat{color:#f6eed9;}
 .ffee{color:#7B3F00;}
 
@@ -128,6 +172,56 @@ font-weight:700;
 text-decoration:none;
 background:linear-gradient(45deg,var(--accent),var(--accent-strong));
 color:#000;
+}
+
+.btn{
+position:relative;
+overflow:hidden;
+transition:0.3s;
+}
+
+.donation-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.donation-card{
+transition:0.4s;
+}
+
+.donation-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 40px rgba(255,182,193,0.3);
+}
+
+.donation-banner{
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.donation-card ul{
+list-style:none;
+padding-left:0;
+margin-bottom:20px;
+}
+
+.donation-card ul li{
+margin-bottom:8px;
+color:var(--muted);
+font-size:14px;
+}
+
+.ultra{
+border:2px solid gold;
+box-shadow:0 0 35px rgba(255,215,0,0.4);
+}
+
+.btn:hover{
+box-shadow:0 0 25px var(--accent);
+transform:translateY(-3px):
 }
 
 .section-title{
@@ -164,12 +258,12 @@ margin-bottom:30px;
 font-size:15px;
 }
 
-.footer-inline{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:15px;
-padding:30px;
+.footer{
+  margin-top:80px;
+  padding:30px;
+  text-align:center;
+  font-size:14px;
+  opacity:0.8;
 }
 </style>
 </head>
@@ -185,6 +279,8 @@ padding:30px;
 <a href="#terminos">Términos</a>
 <a href="#privacidad">Privacidad</a>
 <a href="#comandos">Comandos</a>
+<a href="#report">Reportar Error</a>
+<a href="#comments">Sugerencias</a>
 </nav>
 </header>
 
@@ -202,80 +298,461 @@ Con Caatffee, el poder de tu servidor cabe en la palma de tu mano.
 <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1475842620063485993&permissions=8&scope=bot%20applications.commands" target="_blank">Añadir el Bot</a>
 <a class="btn" href="https://discord.gg/ESPYGjMqYK" target="_blank">Servidor de Soporte</a>
 </div>
+
+<div style="margin-top:80px">
+
+<h2 class="section-title">🌸 ¿Por qué elegir Caatffee? 🌸</h2>
+
+<div class="card">
+<h3>⚡ Gestión Completa</h3>
+<p>Crea, edita y elimina canales, roles, eventos y más con simples comandos o desde tu MD.</p>
+</div>
+
+<div class="card">
+<h3>🛡️ Moderación Inteligente</h3>
+<p>Sistema avanzado de bans, warns, locks, slowmode y control total del servidor.</p>
+</div>
+
+<div class="card">
+<h3>☕ Panel Integrado</h3>
+<p>Administra tu servidor sin salir de Discord con comandos intuitivos y md.</p>
+</div>
+
+</div>
 </div>
 </section>
 
 <!-- DONACIONES -->
 <section id="Donaciones">
-<h2 class="section-title">☕ Donaciones</h2>
-<div class="card">
-<h3>Apoya el desarrollo</h3>
-<p>Suscripciones activas mediante Patreon.</p>
-<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Ir a Patreon</a>
+<h2 class="section-title">🌸 Planes de Donación 🌸</h2>
+
+<div class="donation-grid">
+
+<!-- BÁSICA -->
+<div class="card donation-card">
+<img src="https://i.postimg.cc/vBgkfCh6/Donación_Básica_Banner.jpg" class="donation-banner">
+
+<h3>Donación Básica — $3.99</h3>
+
+<ul>
+<li>🌟 Roles exclusivos (Barista Donador Básico + Premium)</li>
+<li>📊 Estadísticas avanzadas básicas</li>
+<li>🕒 Prioridad ligera en soporte</li>
+<li>💬 Canal exclusivo de sugerencias</li>
+</ul>
+
+<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
+</div>
+
+<!-- INTERMEDIA -->
+<div class="card donation-card">
+<img src="https://i.postimg.cc/KjdZtntg/Donación_Intermedia_Banner.jpg" class="donation-banner">
+
+<h3>Donación Intermedia — $5</h3>
+
+<ul>
+<li>Incluye todo lo de la Básica</li>
+<li>🌟 Rol Barista Donador Intermedio + Premium</li>
+<li>🎛 Más opciones del dashboard</li>
+<li>🎨 Personalizar nombre del panel</li>
+<li>📂 Plantillas exclusivas de servidor</li>
+<li>🔔 Logs avanzados</li>
+</ul>
+
+<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
+</div>
+
+<!-- AVANZADA -->
+<div class="card donation-card">
+<img src="https://i.postimg.cc/2STSKBDv/Donación_Avanzada.jpg" class="donation-banner">
+
+<h3>Donación Avanzada — $10</h3>
+
+<ul>
+<li>Incluye todo lo de la Intermedia</li>
+<li>🌟 Rol Barista Donador Avanzado + Premium</li>
+<li>🤖 Comandos exclusivos Avanzados</li>
+<li>🎨 Personalización del panel</li>
+<li>📂 Plantillas premium</li>
+<li>🔔 Logs avanzados</li>
+</ul>
+
+<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
+</div>
+
+<!-- ULTRA -->
+<div class="card donation-card ultra">
+<img src="https://i.postimg.cc/Pf6KTSMG/Donación_Barista_Ultra.jpg" class="donation-banner">
+
+<h3>Donación Barista Ultra — $15</h3>
+
+<ul>
+<li>⚡ Incluye todo lo de la Avanzada</li>
+<li>🏆 Badge ULTRA visible en panel</li>
+<li>🎨 Recomendación de tu servidor en la web</li>
+<li>🌐 Acceso temprano a funciones</li>
+<li>🤝 Soporte prioritario real</li>
+<li>🧩 Integraciones exclusivas futuras</li>
+<li>📈 Panel premium extendido</li>
+</ul>
+
+<a class="btn" href="https://www.patreon.com/15613390/join" target="_blank">Quiero donar</a>
+</div>
+
 </div>
 </section>
-
 <!-- UPDATES -->
 <section id="Updates">
-<h2 class="section-title">🌸 Updates</h2>
+<h2 class="section-title">🌸 Updates 🌸</h2>
+
 <div class="card">
-<p>Última actualización: 25/02/2026</p>
-<p>Mejoras en moderación y sistema premium.</p>
+
+<img src="https://i.postimg.cc/3J3W7Dh8/1_Update_Banner.jpg" class="update-banner">
+
+<p><strong>Última actualización:</strong> 25/02/2026</p>
+<p>Añadimos y mejoramos nuevos comandos</p>
+<p><strong>Comandos agregados:</strong> /help /update /dashboard-server /create-channe /create-category entre otros mas</p>
+
 </div>
 </section>
 
 <!-- TERMINOS -->
 <section id="terminos">
-<h2 class="section-title">Términos</h2>
-<div class="card">
-<p>Uso responsable obligatorio.</p>
-<p>Las suscripciones son consideradas donaciones y no son reembolsables.</p>
-</div>
+  <h2 class="section-title">Términos de Servicio</h2>
+
+  <div class="card">
+
+    <p><strong>Última actualización:</strong> 27 de febrero de 2026</p>
+
+    <h3>1. Uso Aceptable</h3>
+    <p>
+      El usuario se compromete a utilizar Caatffee únicamente para fines lícitos
+      y de conformidad con las normas de Discord.
+    </p>
+    <p>
+      Las funciones administrativas están destinadas exclusivamente al propietario
+      del servidor y a los administradores con los permisos correspondientes.
+    </p>
+
+    <h3>2. Servicio Premium</h3>
+    <p>
+      El estatus Premium puede obtenerse mediante una suscripción activa en Patreon.
+    </p>
+    <p>
+      Las suscripciones realizadas a través de Patreon son consideradas contribuciones
+      voluntarias para el mantenimiento y mejora del bot, por lo que no son reembolsables.
+    </p>
+    <p>
+      Los beneficios asociados al estatus Premium permanecerán activos mientras
+      la suscripción esté vigente.
+    </p>
+
+    <h3>3. Responsabilidad</h3>
+    <p>
+      Caatffee no se hace responsable del uso indebido de sus funciones por parte
+      de los usuarios. La conducta, contenido y acciones realizadas mediante el bot
+      son responsabilidad exclusiva del usuario o del administrador que las ejecute.
+    </p>
+    <p>
+      Aunque se implementan filtros preventivos, no se garantiza la supervisión
+      absoluta del contenido generado por los usuarios.
+    </p>
+
+    <h3>4. Gestión de Mensajes</h3>
+    <p>
+      En caso de que un usuario edite un mensaje previamente enviado a través del bot,
+      Caatffee podrá eliminar el mensaje anterior y reenviar la versión actualizada
+      con fines de orden y consistencia.
+    </p>
+
+    <h3>5. Modificaciones</h3>
+    <p>
+      Nos reservamos el derecho de actualizar o modificar estos Términos de Servicio
+      en cualquier momento para garantizar el correcto funcionamiento e integridad
+      del ecosistema Caatffee.
+    </p>
+
+<h3>6. Cumplimiento con las Políticas de Discord</h3>
+<p>
+  Caatffee opera de conformidad con los Términos de Servicio y las Políticas
+  para Desarrolladores de Discord.
+</p>
+<p>
+  El uso del bot está sujeto además a las normas comunitarias, políticas
+  de plataforma y lineamientos oficiales establecidos por Discord.
+</p>
+<p>
+  En caso de conflicto entre estos Términos y las políticas oficiales
+  de Discord, prevalecerán las disposiciones establecidas por Discord.
+</p>
+<p>---
+      Al utilizar Caatffee, el usuario reconoce haber leído, comprendido
+      y aceptado estos Términos de Servicio.
+    </p>
+
+  </div>
 </section>
 
 <!-- PRIVACIDAD -->
 <section id="privacidad">
-<h2 class="section-title">Privacidad</h2>
-<div class="card">
-<p>Solo almacenamos datos necesarios para el funcionamiento del bot.</p>
-</div>
+  <h2 class="section-title">Política de Privacidad</h2>
+
+  <div class="card">
+
+    <p><strong>Última actualización:</strong> 27 de febrero de 2026</p>
+
+    <h3>1. Información Recopilada</h3>
+    <p>
+      Caatffee recopila únicamente la información mínima necesaria para su funcionamiento.
+      Esto puede incluir identificadores públicos de Discord como ID de usuario, ID de servidor,
+      ID de canales y roles cuando sea requerido para configuraciones administrativas.
+    </p>
+    <p>
+      No recopilamos contraseñas, correos electrónicos, mensajes privados personales
+      ni información sensible fuera de lo estrictamente necesario para la operación del bot.
+    </p>
+
+    <h3>2. Uso de la Información</h3>
+    <p>
+      La información recopilada se utiliza exclusivamente para gestionar configuraciones,
+      ejecutar acciones solicitadas por administradores y permitir el correcto funcionamiento
+      de funciones automatizadas o eventos programados.
+    </p>
+    <p>
+      No vendemos ni compartimos datos a terceros.
+    </p>
+
+    <h3>3. Almacenamiento y Retención</h3>
+    <p>
+      Las configuraciones pueden almacenarse temporalmente para garantizar la continuidad
+      del servicio. En el caso de eventos o mensajes programados, la información se conserva únicamente
+      hasta que la acción se ejecute.
+    </p>
+    <p>
+      No se mantiene información de forma indefinida sin justificación operativa.
+    </p>
+
+    <h3>4. Seguridad</h3>
+    <p>
+      Las configuraciones administrativas pueden realizarse mediante mensajes directos
+      con el bot para proteger la privacidad de las acciones dentro de los servidores.
+      Se aplican medidas razonables para evitar accesos no autorizados.
+    </p>
+
+    <h3>5. Eliminación de Datos</h3>
+    <p>
+      Al retirar Caatffee de un servidor, el bot deja de procesar información asociada
+      y no conserva datos residuales innecesarios.
+    </p>
+
+    <h3>6. Control del Usuario</h3>
+    <p>
+      Los propietarios y administradores pueden modificar o eliminar configuraciones en cualquier momento,
+      así como retirar el bot del servidor cuando lo consideren necesario.
+    </p>
+
+  </div>
 </section>
 
 <!-- COMANDOS -->
 <section id="comandos">
-<h2 class="section-title">☕ Lista de Comandos</h2>
+<h2 class="section-title">☕ Lista de Comandos ☕</h2>
 
 <input type="text" class="search-box" placeholder="Buscar comando..." onkeyup="buscarComando(this.value)">
 
 <div id="listaComandos">
 
 <div class="card">
-<h3>/ban</h3>
-<p>Expulsa permanentemente a un usuario del servidor.</p>
+<h3>🆘 /help</h3>
+<p>Aprende a usar el bot y descubre todos los comandos disponibles.</p>
 </div>
 
 <div class="card">
-<h3>/kick</h3>
-<p>Expulsa a un usuario sin prohibir su regreso.</p>
+<h3>⭐ /update</h3>
+<p>Ver la última actualización del bot y lo que contiene.</p>
 </div>
 
 <div class="card">
-<h3>/timeout</h3>
-<p>Silencia temporalmente a un usuario.</p>
+<h3>🏡 /dashboard-server</h3>
+<p>Ver el panel de administración del servidor.</p>
 </div>
 
 <div class="card">
-<h3>/welcome</h3>
-<p>Configura el mensaje de bienvenida.</p>
+<h3>🛠️ /create-channel</h3>
+<p>Crear un nuevo canal en el servidor.</p>
+</div>
+
+<div class="card">
+<h3>🛠️ /create-category</h3>
+<p>Crear una nueva categoría en el servidor.</p>
+</div>
+
+<div class="card">
+<h3>🛠️ /create-event</h3>
+<p>Crear un evento para el servidor.</p>
+</div>
+
+<div class="card">
+<h3>🛠️ /create-role</h3>
+<p>Crear un nuevo rol en el servidor.</p>
+</div>
+
+<div class="card">
+<h3>🛠️ /create-emoji</h3>
+<p>Crear un emoji personalizado.</p>
+</div>
+
+<div class="card">
+<h3>🛠️ /create-sticker</h3>
+<p>Crear un sticker personalizado.</p>
+</div>
+
+<div class="card">
+<h3>✏️ /edit-server</h3>
+<p>Editar el nombre o la descripción del servidor.</p>
+</div>
+
+<div class="card">
+<h3>✏️ /edit-channel</h3>
+<p>Editar la configuración de un canal.</p>
+</div>
+
+<div class="card">
+<h3>✏️ /edit-category</h3>
+<p>Editar una categoría existente.</p>
+</div>
+
+<div class="card">
+<h3>✏️ /edit-event</h3>
+<p>Editar un evento creado previamente.</p>
+</div>
+
+<div class="card">
+<h3>✏️ /edit-role</h3>
+<p>Editar la configuración de un rol.</p>
+</div>
+
+<div class="card">
+<h3>🗑️ /delete-channel</h3>
+<p>Borrar un canal del servidor.</p>
+</div>
+
+<div class="card">
+<h3>🗑️ /delete-category</h3>
+<p>Borrar una categoría del servidor.</p>
+</div>
+
+<div class="card">
+<h3>🗑️ /delete-event</h3>
+<p>Eliminar un evento del servidor.</p>
+</div>
+
+<div class="card">
+<h3>🗑️ /delete-role</h3>
+<p>Borrar un rol del servidor.</p>
+</div>
+
+<div class="card">
+<h3>⛔ /ban</h3>
+<p>Expulsar permanentemente a un usuario del servidor.</p>
+</div>
+
+<div class="card">
+<h3>✅ /unban</h3>
+<p>Revocar el ban de un usuario.</p>
+</div>
+
+<div class="card">
+<h3>🦵 /kick</h3>
+<p>Expulsar a un usuario del servidor sin banearlo.</p>
+</div>
+
+<div class="card">
+<h3>🔊 /unmute</h3>
+<p>Quitar el mute a un usuario.</p>
+</div>
+
+<div class="card">
+<h3>🐌 /timeout</h3>
+<p>Activar modo pausado (slowmode) en un canal.</p>
+</div>
+
+<div class="card">
+<h3>🪧 /warn</h3>
+<p>Enviar un aviso a un usuario por mala conducta.</p>
+</div>
+
+<div class="card">
+<h3>🆑 /purge</h3>
+<p>Borrar múltiples mensajes del chat.</p>
+</div>
+
+<div class="card">
+<h3>🆑 /purge-user</h3>
+<p>Borrar mensajes específicos de un usuario.</p>
+</div>
+
+<div class="card">
+<h3>⛔ /lock</h3>
+<p>Bloquear un canal para que nadie pueda enviar mensajes.</p>
+</div>
+
+<div class="card">
+<h3>✅ /unlock</h3>
+<p>Desbloquear un canal para permitir mensajes nuevamente.</p>
+</div>
+
+<div class="card">
+<h3>🔇 /slowmode</h3>
+<p>Activar el modo lento en un canal para limitar la frecuencia de mensajes.</p>
 </div>
 
 </div>
 </section>
 
-<footer>
-<div class="footer-inline">
-<span>© 2026 Caatffee</span>
+<!-- REPORTAR ERROR -->
+<section id="report">
+<h2 class="section-title">🐞 Reportar Error 🌸</h2>
+
+<div class="card">
+<form action="https://formspree.io/f/mojnyewl" method="POST">
+
+<input type="text" name="nombre" placeholder="Escribe aqui tu nombre o usuario de Discord❤️" required class="search-box">
+
+<input type="email" name="email" placeholder="Tu correo electrónico❤️" required class="search-box">
+
+<textarea name="mensaje" placeholder="Describe el error detalladamente..." required 
+style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:20px;font-size:15px;height:120px;"></textarea>
+
+<button type="submit" class="btn">Enviar Reporte</button>
+
+</form>
 </div>
+</section>
+
+<!-- SUGERENCIAS -->
+<section id="comments">
+<h2 class="section-title">💡 Enviar Sugerencia 🌸</h2>
+
+<div class="card">
+<form action="https://formspree.io/f/mojnyewl" method="POST">
+
+<input type="text" name="nombre" placeholder="Escribe aqui tu nombre o usuario de Discord❤️" required class="search-box">
+
+<input type="email" name="email" placeholder="Tu correo electrónico❤️" required class="search-box">
+
+<textarea name="mensaje" placeholder="Escribe tu sugerencia aquí..." required 
+style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:20px;font-size:15px;height:120px;"></textarea>
+
+<button type="submit" class="btn">Enviar Sugerencia</button>
+
+</form>
+</div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Caatffee. Todos los derechos reservados.</p>
+  <p>Creado por ElJose (@el_jose_oficial)</p>
 </footer>
 
 <script>
